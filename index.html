@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorologia</title>
+    <style type="text/css">
+        body {
+
+            background-color: #D7D7D9;
+            background-image: url(pexelsphoto3675083.jpeg);
+        }
+
+        .pesquisa-box {
+            float: left;
+            width: 102%;
+            height: 150px;
+            background-color: #024873;
+            color: #F0F1F2;
+            margin: -1% -1% -1% -1%;
+            text-align: start;
+            font-size: 15px;
+
+        }
+
+        .cidade-box {
+            width: 28%;
+            height: 100px;
+            background-color: #024873;
+            color: #F0F1F2;
+            float: left;
+            margin: -8% 0% 0% 0%;
+            font-family: Roboto, sans-serif;
+
+
+        }
+
+
+        #divDeBusca {
+            background-color: #96BFD9;
+            border: solid 5px;
+            border-color: #96BFD9;
+            border-radius: 20px;
+            width: 30%;
+            margin: 4% 0% 0% 30%;
+
+        }
+
+        #txtBusca {
+            float: inline-start;
+            background-color: #96BFD9;
+            padding-top: 0px;
+            font-style: italic;
+            font-size: 18px;
+            border: none;
+            height: 30%;
+            width: 260px;
+        }
+
+        .imagem2-fundo-box {
+            width: 100%;
+            height: 100px;
+            margin: 0% 0% 0% 0%;
+        }
+
+        .tabela-box {
+            width: 98%;
+            height: 165px;
+            float: left;
+            background-color: #024873;
+            margin: 5% 0% 5% 1%;
+            font-size: 30px;
+            border-color: #96BFD9;
+            border-radius: 10px;
+            border-style: groove;
+            font-family: Roboto, sans-serif;
+        }
+
+        .imagem1-box {
+            width: 30%;
+            height: 50px;
+            margin: -32% -5% 5% 0%;
+            float: right;
+
+        }
+
+        .relacionados1-box {
+            width: 15%;
+            height: 350px;
+            background-color: #a1aab8;
+            border-color: #a1aab8;
+            border-radius: 20px;
+            float: left;
+            margin: 1% 0% 1% 11%;
+
+        }
+
+        .relacionados2-box {
+            width: 15%;
+            height: 250px;
+            background-color: #F0F1F2;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: left;
+            margin: 1% 0% 0% 1%;
+        }
+
+        .relacionados2-box .chuvaimg {
+            width: 80%;
+            height: 150px;
+            float: left;
+        }
+
+        .relacionados2-box .chuvaimg img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: -5% 25% 0% 25%;
+            border-color: #a1aab8;
+            border-radius: 10px;
+        }
+
+        .relacionados2-box .noticia1 {
+            width: 100%;
+            height: 125px;
+            float: left;
+            text-align: center;
+            font-family: Roboto, sans-serif;
+        }
+
+
+        .relacionados3-box {
+            width: 15%;
+            height: 350px;
+            background-color: #a1aab8;
+            border-color: #a1aab8;
+            border-radius: 20px;
+            float: left;
+            margin: 1% 0% 1% 1%;
+
+        }
+
+        #mostrar {
+            display: none;
+        }
+
+        #passarmouse:hover #mostrar {
+            display: block;
+            font-size: 15px;
+            font-family: Roboto, sans-serif;
+            text-align: start;
+            margin: 0.5% 0.5%;
+        }
+
+        .relacionados4-box {
+            width: 15%;
+            height: 250px;
+            background-color: #F0F1F2;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: left;
+            margin: 1% 0% 0% 1%;
+
+        }
+
+        .relacionados4-box .geadaimg {
+            width: 80%;
+            height: 150px;
+            float: left;
+        }
+
+        .relacionados4-box .geadaimg img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: -5% 25% 0% 25%;
+            border-color: #a1aab8;
+            border-radius: 10px;
+        }
+
+        .relacionados4-box .noticia2 {
+            width: 100%;
+            height: 125px;
+            float: left;
+            text-align: center;
+            font-family: Roboto, sans-serif;
+
+        }
+
+        .relacionados5-box {
+            width: 15%;
+            height: 350px;
+            background-color: #a1aab8;
+            border-color: #a1aab8;
+            border-radius: 20px;
+            float: left;
+            margin: 1% 0% 0% 1%;
+
+        }
+
+        #mostrar2 {
+            display: none;
+        }
+
+        #passarmouse2:hover #mostrar2 {
+            display: block;
+            font-size: 15px;
+            font-family: Roboto, sans-serif;
+            text-align: start;
+            margin: 0.5% 0.5%;
+        }
+
+        .relacionados6-box {
+            width: 15%;
+            height: 250px;
+            background-color: #F0F1F2;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: right;
+            margin: 0% 74% 0% 0%;
+        }
+
+        .relacionados6-box .cicloneimg {
+            width: 80%;
+            height: 150px;
+            float: left;
+        }
+
+        .relacionados6-box .cicloneimg img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: -20% 25% 0% 25%;
+            border-color: #a1aab8;
+            border-radius: 10px;
+        }
+
+        .relacionados6-box .noticia3 {
+            width: 100%;
+            height: 125px;
+            float: left;
+            text-align: center;
+            font-family: Roboto, sans-serif;
+
+        }
+
+        .relacionados7-box {
+            width: 15%;
+            height: 350px;
+            background-color: #a1aab8;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: right;
+            margin: -26% 58% 0% 0%;
+        }
+
+        #mostrar3 {
+            display: none;
+        }
+
+        #passarmouse3:hover #mostrar3 {
+            display: block;
+            font-size: 15px;
+            font-family: Roboto, sans-serif;
+            text-align: start;
+            margin: 0.5% 0.5%;
+        }
+
+        .relacionados8-box {
+            width: 15%;
+            height: 250px;
+            background-color: #F0F1F2;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: right;
+            margin: -19% 42% 0% 0%;
+        }
+
+        .relacionados8-box .computadorimg {
+            width: 80%;
+            height: 150px;
+            float: left;
+        }
+
+        .relacionados8-box .computadorimg img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: -5% 25% 0% 25%;
+            border-color: #a1aab8;
+            border-radius: 10px;
+        }
+
+        .relacionados8-box .noticia4 {
+            width: 100%;
+            height: 125px;
+            float: left;
+            text-align: center;
+            font-family: Roboto, sans-serif;
+        }
+
+        .relacionados9-box {
+            width: 15%;
+            height: 350px;
+            background-color: #a1aab8;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: right;
+            margin: -26% 26% 0% 0%;
+        }
+
+        #mostrar4 {
+            display: none;
+        }
+
+        #passarmouse4:hover #mostrar4 {
+            display: block;
+            font-size: 15px;
+            font-family: Roboto, sans-serif;
+            text-align: start;
+            margin: 0.5% 0.5%;
+        }
+
+        #mostrar5 {
+            display: none;
+        }
+
+        #passarmouse5:hover #mostrar5 {
+            display: block;
+            font-size: 15px;
+            font-family: Roboto, sans-serif;
+            text-align: start;
+            margin: 0.5% 0.5%;
+        }
+
+        .relacionados10-box {
+            width: 15%;
+            height: 250px;
+            background-color: #F0F1F2;
+            border-color: #F0F1F2;
+            border-radius: 20px;
+            float: right;
+            margin: -19% -31% 0% 0%;
+        }
+
+        .relacionados10-box .distritoimg {
+            width: 80%;
+            height: 150px;
+            float: left;
+        }
+
+        .relacionados10-box .distritoimg img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: -5% 25% 0% 25%;
+            border-color: #a1aab8;
+            border-radius: 10px;
+        }
+
+        .relacionados10-box .noticia5 {
+            width: 100%;
+            height: 125px;
+            float: left;
+            text-align: center;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pesquisa-box">
+        <div class="busca-box" id="divDeBusca">
+            <input type="text" id="txtBusca" placeholder="⠀⠀Buscar uma cidade..." />
+        </div>
+    </div>
+
+    <div class="cidade-box">
+        <h1>Previsão do tempo </h1>
+    </div>
+    <div class="tabela-box">
+        <table border="0">
+
+            <tr>
+                <th bgcolor=#82B0D9>Cidade: </th>
+                <th bgcolor=#82B0D9 colspan="7">Guaratinguetá</th>
+
+            </tr>
+
+            <tr>
+                <th bgcolor=#82B0D9 rowspan="2">Temperatura:</th>
+                <td bgcolor=#82B0D9>⠀⠀Seg⠀ </td>
+                <td bgcolor=#82B0D9>⠀⠀Ter⠀⠀⠀</td>
+                <td bgcolor=#82B0D9>⠀⠀Quar⠀⠀</td>
+                <td bgcolor=#82B0D9>⠀⠀Qui⠀⠀⠀</td>
+                <td bgcolor=#82B0D9>⠀⠀Sex⠀⠀⠀</td>
+                <td bgcolor=#82B0D9>⠀⠀Sab⠀⠀⠀</td>
+                <td bgcolor=#82B0D9>⠀⠀Dom⠀⠀⠀</td>
+
+            </tr>
+            <tr>
+                <td bgcolor=#82B0D9>⠀26° - 17°⠀ </td>
+                <td bgcolor=#82B0D9>⠀26° - 16°⠀</td>
+                <td bgcolor=#82B0D9>⠀28° - 13°⠀</td>
+                <td bgcolor=#82B0D9>⠀29° - 14°⠀</td>
+                <td bgcolor=#82B0D9>⠀25° - 12°⠀</td>
+                <td bgcolor=#82B0D9>⠀26° - 16°⠀</td>
+                <td bgcolor=#82B0D9>⠀24° - ⠀ 13°⠀</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="imagem1-box">
+        <img src="partly_cloudy.png" width="100" height="100" alt="imagem1" />
+
+    </div>
+
+    <div class="relacionados1-box">
+        <ul>
+            <li> <button style="background-color:#024873; color:#F0F1F2; border-color:#024873; border-radius: 10px;"
+                    onclick="alert('Temperatura atual é de 17°graus!')"> <img src="temperature.7da4e80.svg"
+                        alt="imag6" /> Temperatura atual </button> </li>
+            <br> </br>
+            <br> </br>
+            <li> <button style="background-color: #024873; color: #F0F1F2; border-color:#024873; border-radius: 10px;"
+                    onclick="alert('A humidade de 88%!')"> <img src="humidity.2f3370a.svg" alt="imag5" /> Humidade
+                </button> </li>
+            <br> </br>
+            <br> </br>
+            <li><button
+                    style="background-color: #024873; color: #F0F1F2; border-color:#024873; border-radius: 10px; margin: 0% 4% 0% 0%"
+                    onclick="alert('Velocidade do vento é de 13km/h! ')"> <img src="wind.442bb1f.svg" alt="imag4" />
+                    Velocidade do vento </button> </li>
+        </ul>
+
+
+    </div>
+    <div class="relacionados2-box">
+
+        <div class="noticia1">
+            <h3><span style="color:red">Chuvas</span> devem permanecer durante toda a <span
+                    style="color: red">semana</span>, diz a meteorologia.</h3>
+        </div>
+
+        <div class="chuvaimg">
+            <img src="chuva00img.jfif" />
+        </div>
+
+    </div>
+
+
+    <div class="relacionados3-box">
+        <div id="passarmouse"> <span
+                style="font-size: 16px; font-family:Roboto, sans-serif; margin: 1% 1%; text-align: center; "> <strong>
+                    As chuvas
+                    devem permanecer até o final da primeira quinzena de maio, seguida da diminuição
+                    das temperaturas...</strong></span>
+            <div id="mostrar">As nuvens carregadas concentram-se primeiro no litoral e
+                na região centro-sul do estado, mas desloca-se para a região agreste e para o sertão no final da tarde.
+                Apesar do padrão, as temperaturas não devem sofrer grandes alterações na Grande Aracaju. “As
+                temperaturas se mantém. As mínimas ficam entre 23° e 24° e as máximas em 30°”, completou Overland.</div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="relacionados4-box">
+
+        <div class="noticia2">
+            <h3>Pode haver <span style="color: red">geada</span> nas proximas semanas, diz <span
+                    style="color:red">estudos do cptec</span>. </h3>
+        </div>
+        <div class="geadaimg">
+            <img src="gelo00img.jfif" />
+        </div>
+    </div>
+    <div class="relacionados5-box">
+        <div id="passarmouse2"><span
+                style="font-size: 16px; font-family:Roboto, sans-serif; margin: 1% 1%; text-align: center; "><strong>
+                    A frente fria prevista para este fim de semana não deve
+                    beneficiar as áreas produtoras de milho segunda safra...</strong></span>
+            <div id="mostrar2">A temperatura mais baixa do ano no Sudeste foi registrada na manhã desta sexta-feira, 23.
+                Fez
+                apenas 5 °C em Monte Verde (MG) e 9 °C nas áreas de café do sul de Minas Gerais, mas sem extremos.
+
+                Uma nova onda de frio está prevista para a semana que vem. O sistema deve trazer temperaturas ainda
+                menores,
+                especialmente as mínimas, registradas durante as madrugadas e manhãs.
+            </div>
+        </div>
+    </div>
+
+    <div class="relacionados6-box">
+        <div class="noticia3">
+            <h3><span style="color:red">Ciclone</span> traz <span style="color:red">chuva</span> no Leste gaúcho.</h3>
+        </div>
+        <div class="cicloneimg">
+            <img src="ciclone00img.jfif" />
+        </div>
+    </div>
+
+    <div class="relacionados7-box">
+        <div id="passarmouse3"> <span
+                style="font-size: 16px; font-family:Roboto, sans-serif; margin: 1% 1%; text-align: center; "><strong>
+                    Ciclone extratropical no Atlântico traz nuvens e chuva isolada no Leste gaúcho, mas chuva
+                    generalizada vai
+                    demorar a chegar.</strong></span>
+            <div id="mostrar3">
+                A circulação de umidade de um ciclone no Oceano Atlântico trouxe instabilidade hoje (26) para o Leste do
+                Rio Grande do Sul. Houve registro de chuva e garoa em diferentes pontos do Leste do Estado, caso de
+                Porto Alegre que registrou precipitação leve durante o período da tarde.
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="relacionados8-box">
+        <div class="noticia4">
+            <h3>Microsoft <span style="color:red">anuncia</span> supercomputador meteorológico mais poderoso do <span
+                    style="color:red">mundo</span>.</h3>
+        </div>
+        <div class="computadorimg">
+            <img src="computador00img.jfif" />
+        </div>
+    </div>
+
+    <div class="relacionados9-box">
+        <div id="passarmouse4">
+            <psan style="font-size: 16px; font-family:Roboto, sans-serif; margin: 1% 1%; text-align: center;"><strong>
+                    Microsoft anuncia... </strong> </psan>
+            <div id="mostrar4">
+                O departamento de meteorologia do Reino Unido (Met Office) e a Microsoft confirmaram nesta quinta-feira
+                (22), Dia da Terra, uma parceria para a fabricação de um novo supercomputador.
+            </div>
+        </div>
+        <br> </br>
+        _________________
+        <div id="passarmouse5">
+            <psan style="font-size: 16px; font-family:Roboto, sans-serif; margin: 1% 1%; text-align: center;"><strong>
+                   Doze distritos...</strong></psan>
+
+            <div id="mostrar5">
+                Doze distritos do continente vão estar a partir das 10h desta terça-feira sob aviso amarelo devido à
+                previsão de aguaceiros, por vezes fortes, acompanhados de trovoada e de granizo, segundo o IPMA.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="relacionados10-box">
+        <div class="noticia5">
+            <h3><span style="color:red">Doze distritos</span> do continente sob aviso <span
+                    style="color:red">amarelo</span> devido à chuva.</h3>
+        </div>
+        <div class="distritoimg">
+            <img src="distrito00img.jfif" />
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
